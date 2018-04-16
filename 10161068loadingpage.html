@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ITK "Institut Teknologi Kalimantan"</title>
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin : 0px;
+      padding : 0px;
+      background: pink;
+    }
+    .percent-count {
+      width: 450px;
+      height: 50px;
+      margin : 100px auto;
+      font-size: 50px;
+      text-align: center;
+      color: maroon;
+    }
+    .progress-bar{
+      width : 506px;
+      height : 40px;
+      background-color: black;
+      border-radius: 13px;
+      padding: 3px;
+      margin: 50px auto;
+    }
+    .progress{
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      background-color: pink;
+    }
+    .btn {
+        background-color: salmon;
+        border: none;
+        color: black;
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+  </style>
+  <body>
+    <div id="Loadingprogress" class="percent-count">Just Wait For Little Seconds</div>
+    <div class="progress-bar">
+      <div class="progress" id = "progress"></div>
+      <button class="btn" style="width:100%" type="button" id="myBtn" onclick ="window.location = 'https://itk.ac.id';">ITK'S WEBSITE</button>
+    </div>
+    </body>
+    <script>
+      function progress(){
+        var prg = document.getElementById('progress');
+        var precent = document.getElementById('Loadingprogress');
+        var counter = 5;
+        var progress = 25;
+        var id = setInterval(frame, 50);
+
+        function frame(){
+          if(progress == 500 && counter == 100){
+            cleanInterval(id);
+          }
+          else {
+            progress += 5;
+            counter += 1;
+            prg.style.width = progress + 'px';
+            percent.innerHTML = counter + '%';
+          }
+        }
+      }
+progress();
+    </script>
+<script>
+  $("Loadingprogress").click(function){
+    $("button").hide("slow", function(){
+      alert("Apakah anda ingin masuk ke web itk?")
+  });
+});
+</script>
+  </body>
+</html>
